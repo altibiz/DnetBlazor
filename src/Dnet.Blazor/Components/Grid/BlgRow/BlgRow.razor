@@ -103,8 +103,7 @@
      @onmouseover="() => MouseOver(RowNode)"
      @onmouseout="() => MouseOut(RowNode)"
      @onclick="() => CellClicked(RowNode, cell)"
-     @ondblclick="() => RowDoubleClicked(RowNode, cell)"
-     @onclick:preventDefault="true">
+     @ondblclick="() => RowDoubleClicked(RowNode, cell)">
             @if (cell.CellTemplateFn != null && cell.CellTemplate == null)
             {
                 @cell.CellTemplateFn(cellParams)

@@ -18,6 +18,7 @@
 			- Add marker for required field.
 			- Fix bug where CSS display is required on initial load and the field has not been modified yet.
 		</PackageReleaseNotes>
+		<Configurations>Debug;Release</Configurations>
 	</PropertyGroup>
 
 	<ItemGroup>

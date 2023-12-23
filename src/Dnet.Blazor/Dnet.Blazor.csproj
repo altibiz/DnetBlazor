@@ -32,7 +32,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Components" Version="7.0.12" />
+		<PackageReference Include="Microsoft.AspNetCore.Components" Version="7.0.14" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.12" />
 		<PackageReference Include="SixLabors.ImageSharp" Version="3.0.2" />
 	</ItemGroup>

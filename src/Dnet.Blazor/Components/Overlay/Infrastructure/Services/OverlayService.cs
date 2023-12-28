@@ -13,7 +13,7 @@ namespace Dnet.Blazor.Components.Overlay.Infrastructure.Services
 
         public event Action OnBackdropClicked;
 
-        private List<OverlayReference> _overlayReferences { get; set; } = new List<OverlayReference>();
+        private List<OverlayReference> _overlayReferences { get; set; } = [];
 
         private int _sequenceNumber { get; set; } = 0;
 

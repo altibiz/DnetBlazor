@@ -17,7 +17,7 @@ namespace Dnet.Blazor.Components.Toast.Infrastructure.Services
 
         private int _toastCounter = 0;
 
-        private Dictionary<int, int> _positionTracker = new Dictionary<int, int>();
+        private Dictionary<int, int> _positionTracker = [];
 
         public ToastService(IOverlayService overlayService)
         {

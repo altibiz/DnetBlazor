@@ -27,7 +27,7 @@ public class CustomSort<TItem>
 
     public CustomSort<TItem> ThenAscending<U>(Expression<Func<TItem, string>> expression)
     {
-        _thenExpressions ??= new();
+        _thenExpressions ??= [];
         _thenExpressions.Add(new SortPredicate<TItem>
         {
             Predicate = expression,
@@ -38,7 +38,7 @@ public class CustomSort<TItem>
 
     public CustomSort<TItem> ThenDescending<U>(Expression<Func<TItem, string>> expression)
     {
-        _thenExpressions ??= new();
+        _thenExpressions ??= [];
         _thenExpressions.Add(new SortPredicate<TItem>
         {
             Predicate = expression,

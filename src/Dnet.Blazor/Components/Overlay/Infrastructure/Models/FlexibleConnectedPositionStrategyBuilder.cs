@@ -259,9 +259,9 @@ namespace Dnet.Blazor.Components.Overlay.Infrastructure.Models
             var bottomOverflow = (y + overlay.Height) - viewport.Height;
 
             // Visible parts of the element on each axis.
-            var visibleWidth = this.SubtractOverflows(overlay.Width, new List<double> { leftOverflow, rightOverflow });
+            var visibleWidth = this.SubtractOverflows(overlay.Width, [leftOverflow, rightOverflow]);
 
-            var visibleHeight = this.SubtractOverflows(overlay.Height, new List<double> { topOverflow, bottomOverflow });
+            var visibleHeight = this.SubtractOverflows(overlay.Height, [topOverflow, bottomOverflow]);
 
             var visibleArea = visibleWidth * visibleHeight;
 

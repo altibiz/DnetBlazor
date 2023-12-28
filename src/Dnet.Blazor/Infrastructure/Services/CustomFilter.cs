@@ -23,7 +23,7 @@ public class CustomFilter<TItem>
 
     public CustomFilter<TItem> ThenFilterBy(Expression<Func<TItem, string>> expression, CustomFilterOperator filterOperator = CustomFilterOperator.Contains)
     {
-        _thenExpressions ??= new();
+        _thenExpressions ??= [];
         _thenExpressions.Add(new FilterPredicate<TItem>
         {
             Predicate = expression,

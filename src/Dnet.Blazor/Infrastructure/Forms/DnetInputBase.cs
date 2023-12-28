@@ -281,7 +281,7 @@ namespace Dnet.Blazor.Infrastructure.Forms
             var newDictionaryCreated = true;
             if (source == null)
             {
-                result = new Dictionary<string, object>();
+                result = [];
             }
             else if (source is Dictionary<string, object> currentDictionary)
             {
@@ -290,7 +290,7 @@ namespace Dnet.Blazor.Infrastructure.Forms
             }
             else
             {
-                result = new Dictionary<string, object>();
+                result = [];
                 foreach (var item in source)
                 {
                     result.Add(item.Key, item.Value);

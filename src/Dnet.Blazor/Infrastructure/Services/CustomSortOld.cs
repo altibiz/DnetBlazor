@@ -22,14 +22,14 @@ public class CustomSortOld<TItem>
 
     public CustomSortOld<TItem> ThenAscending<U>(Expression<Func<TItem, U>> expression)
     {
-        _then ??= new();
+        _then ??= [];
         _then.Add((queryable) => queryable.ThenBy(expression));
         return this;
     }
 
     public CustomSortOld<TItem> ThenDescending<U>(Expression<Func<TItem, U>> expression)
     {
-        _then ??= new();
+        _then ??= [];
         _then.Add((queryable) => queryable.ThenByDescending(expression));
         return this;
     }

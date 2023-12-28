@@ -62,7 +62,7 @@ namespace Dnet.Blazor.Components.Grid.Infrastructure.Services
                         if (!dic.ContainsKey(gridColumn.CellDataFn(cellParams).ToString()))
                         {
                             dic[gridColumn.CellDataFn(cellParams).ToString()] = groups.Count;
-                            groups.Add(new List<TreeRowNode<TItem>>() {child});
+                            groups.Add([child]);
                         }
                         else
                         {
@@ -71,7 +71,7 @@ namespace Dnet.Blazor.Components.Grid.Infrastructure.Services
                     }
                 }
 
-                tree.Children = new List<TreeRowNode<TItem>>();
+                tree.Children = [];
 
                 if (nullGroup.Count > 0)
                     groups.Add(nullGroup);
@@ -171,7 +171,7 @@ namespace Dnet.Blazor.Components.Grid.Infrastructure.Services
                             if (!dic.ContainsKey(subtreeGridColumn.CellDataFn(cellParams).ToString()))
                             {
                                 dic[subtreeGridColumn.CellDataFn(cellParams).ToString()] = groups.Count;
-                                groups.Add(new List<TreeRowNode<TItem>>() {child});
+                                groups.Add([child]);
                             }
                             else
                             {
@@ -180,7 +180,7 @@ namespace Dnet.Blazor.Components.Grid.Infrastructure.Services
                         }
                     }
 
-                    tree.Children = new List<TreeRowNode<TItem>>();
+                    tree.Children = [];
 
                     if (nullGroup.Count > 0)
                         groups.Add(nullGroup);

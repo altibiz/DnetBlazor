@@ -13,11 +13,11 @@ namespace Dnet.Blazor.Components.Grid.Infrastructure.Entities
 
         public int RowHeight { get; set; } = 40;
 
-        public List<string> RowStyle { get; set; } = new();
+        public List<string> RowStyle { get; set; } = [];
 
         public Func<CellParams<TItem>, List<string>> RowStyleFn { get; set; }
 
-        public List<string> RowClasses { get; set; } = new();
+        public List<string> RowClasses { get; set; } = [];
 
         public Func<CellParams<TItem>, List<string>> RowClassFn { get; set; }
 

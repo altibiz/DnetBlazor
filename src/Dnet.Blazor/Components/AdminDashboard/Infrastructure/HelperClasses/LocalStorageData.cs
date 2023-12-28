@@ -28,6 +28,6 @@ namespace Dnet.Blazor.Components.AdminDashboard.Infrastructure.HelperClasses
 
     public class Rights
     {
-        public List<string> Values { get; set; } = new List<string>();
+        public List<string> Values { get; set; } = [];
     }
 }

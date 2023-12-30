@@ -84,7 +84,7 @@ public class CustomSort<TItem>
             
             var sortType = _firstExpression.SortOrder == CustomSortOrder.Ascending ? "ThenBy" : "ThenByDescending";
 
-            var thenByExp = Expression.Call(typeof(Queryable), sortType, new[] { type, property.PropertyType }, queryable.Expression, expression3);
+            var thenByExp = Expression.Call(typeof(Queryable), sortType, [type, property.PropertyType], queryable.Expression, expression3);
 
             queryable = queryable.Provider.CreateQuery<TItem>(thenByExp);
         }
@@ -92,7 +92,7 @@ public class CustomSort<TItem>
         {
             var sortType = _firstExpression.SortOrder == CustomSortOrder.Ascending ? "OrderBy" : "OrderByDescending";
 
-            var orderBy = Expression.Call(typeof(Queryable), sortType, new[] { type, property.PropertyType }, queryable.Expression, expression3);
+            var orderBy = Expression.Call(typeof(Queryable), sortType, [type, property.PropertyType], queryable.Expression, expression3);
 
             queryable = queryable.Provider.CreateQuery<TItem>(orderBy);
         }
@@ -117,7 +117,7 @@ public class CustomSort<TItem>
 
                     var sortType1 = thenExpression.SortOrder == CustomSortOrder.Ascending ? "ThenBy" : "ThenByDescending";
 
-                    var thenByExp1 = Expression.Call(typeof(Queryable), sortType1, new[] { type, property.PropertyType }, queryable.Expression, expression4);
+                    var thenByExp1 = Expression.Call(typeof(Queryable), sortType1, [type, property.PropertyType], queryable.Expression, expression4);
 
                     queryable = queryable.Provider.CreateQuery<TItem>(thenByExp1);
                 }

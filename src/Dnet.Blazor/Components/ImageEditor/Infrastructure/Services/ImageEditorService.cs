@@ -57,57 +57,49 @@ namespace Dnet.Blazor.Components.ImageEditor.Infrastructure.Services
 
             var resizerData = new List<ResizerData>
             {
-                new ResizerData
-                {
+                new() {
                     ResizerType = ResizerType.TopCenter,
                     Cursor = "n-resize",
                     Height = resizerHeight,
                     Width = resizerWidth,
                 },
-                new ResizerData
-                {
+                new() {
                     ResizerType = ResizerType.BottomCenter,
                     Cursor = "s-resize",
                     Height = resizerHeight,
                     Width = resizerWidth,
                 },
-                new ResizerData
-                {
+                new() {
                     ResizerType = ResizerType.LeftCenter,
                     Cursor = "e-resize",
                     Height = resizerHeight,
                     Width = resizerWidth,
                 },
-                new ResizerData
-                {
+                new() {
                     ResizerType = ResizerType.RightCenter,
                     Cursor = "w-resize",
                     Height = resizerHeight,
                     Width = resizerWidth,
                 },
-                new ResizerData
-                {
+                new() {
                     ResizerType = ResizerType.TopLeft,
                     Cursor = "nw-resize",
                     Height = resizerHeight,
                     Width = resizerWidth,
                 },
-                new ResizerData
-                {
+                new() {
                     ResizerType = ResizerType.TopRight,
                     Cursor = "ne-resize",
                     Height = resizerHeight,
                     Width = resizerWidth,
                 },
-                new ResizerData
-                {
+                new() {
                     ResizerType = ResizerType.BottomLeft,
                     Cursor = "sw-resize",
                     Height = resizerHeight,
                     Width = resizerWidth,
                 },
-                new ResizerData
-                {
+                new() {
                     ResizerType = ResizerType.BottomRight,
                     Cursor = "se-resize",
                     Height = resizerHeight,
@@ -122,32 +114,28 @@ namespace Dnet.Blazor.Components.ImageEditor.Infrastructure.Services
         {
             var maskDataData = new List<MaskData>
             {
-                new MaskData
-                {
+                new() {
                     Top = 0,
                     Left = 0,
                     Width = imgWidth,
                     Height = top,
                     Class = "dnet-crop-box-mask-top"
                 },
-                new MaskData
-                {
+                new() {
                     Top = top + height,
                     Left = 0,
                     Width = imgWidth,
                     Height = imgHeight - (top + height),
                     Class = "dnet-crop-box-mask-bottom"
                 },
-                new MaskData
-                {
+                new() {
                     Top = top,
                     Left = 0,
                     Width = left,
                     Height = height,
                     Class = "dnet-crop-box-mask-left"
                 },
-                new MaskData
-                {
+                new() {
                     Top = top,
                     Left = left + width,
                     Width = imgWidth - (left + width),

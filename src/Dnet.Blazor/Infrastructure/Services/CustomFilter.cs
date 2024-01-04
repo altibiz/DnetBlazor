@@ -19,7 +19,7 @@ public class CustomFilter<TItem>
     }
 
     public static CustomFilter<TItem> FilterBy(Expression<Func<TItem, string>> expression, CustomFilterOperator filterOperator = CustomFilterOperator.Contains)
-        => new CustomFilter<TItem>(expression, filterOperator);
+        => new(expression, filterOperator);
 
     public CustomFilter<TItem> ThenFilterBy(Expression<Func<TItem, string>> expression, CustomFilterOperator filterOperator = CustomFilterOperator.Contains)
     {

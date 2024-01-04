@@ -20,10 +20,10 @@ public class CustomSort<TItem>
     }
 
     public static CustomSort<TItem> ByAscending<U>(Expression<Func<TItem, string>> expression)
-        => new CustomSort<TItem>(expression, CustomSortOrder.Ascending);
+        => new(expression, CustomSortOrder.Ascending);
 
     public static CustomSort<TItem> ByDescending<U>(Expression<Func<TItem, string>> expression)
-        => new CustomSort<TItem>(expression, CustomSortOrder.Descending);
+        => new(expression, CustomSortOrder.Descending);
 
     public CustomSort<TItem> ThenAscending<U>(Expression<Func<TItem, string>> expression)
     {

@@ -36,57 +36,49 @@ namespace Dnet.Blazor.Components.Tooltip.Infrastructure.Services
 
             var positions = new List<ConnectedPosition>
             {
-                new ConnectedPosition
-                {
+                new() {
                     OriginX = HorizontalConnectionPos.Start,
                     OriginY = VerticalConnectionPos.Center,
                     OverlayX = HorizontalConnectionPos.End,
                     OverlayY = VerticalConnectionPos.Center
                 },
-                new ConnectedPosition
-                {
+                new() {
                     OriginX = HorizontalConnectionPos.End,
                     OriginY = VerticalConnectionPos.Center,
                     OverlayX = HorizontalConnectionPos.Start,
                     OverlayY = VerticalConnectionPos.Center
                 },
-                new ConnectedPosition
-                {
+                new() {
                     OriginX = HorizontalConnectionPos.Center,
                     OriginY = VerticalConnectionPos.Top,
                     OverlayX = HorizontalConnectionPos.Center,
                     OverlayY = VerticalConnectionPos.Bottom
                 },
-                new ConnectedPosition
-                {
+                new() {
                     OriginX = HorizontalConnectionPos.Center,
                     OriginY = VerticalConnectionPos.Bottom,
                     OverlayX = HorizontalConnectionPos.Center,
                     OverlayY = VerticalConnectionPos.Top
                 },
-                new ConnectedPosition
-                {
+                new() {
                     OriginX = HorizontalConnectionPos.Start,
                     OriginY = VerticalConnectionPos.Bottom,
                     OverlayX = HorizontalConnectionPos.Start,
                     OverlayY = VerticalConnectionPos.Top
                 },
-                new ConnectedPosition
-                {
+                new() {
                     OriginX = HorizontalConnectionPos.Start,
                     OriginY = VerticalConnectionPos.Top,
                     OverlayX = HorizontalConnectionPos.Start,
                     OverlayY = VerticalConnectionPos.Bottom
                 },
-                new ConnectedPosition
-                {
+                new() {
                     OriginX = HorizontalConnectionPos.End,
                     OriginY = VerticalConnectionPos.Bottom,
                     OverlayX = HorizontalConnectionPos.Start,
                     OverlayY = VerticalConnectionPos.Top
                 },
-                new ConnectedPosition
-                {
+                new() {
                     OriginX = HorizontalConnectionPos.End,
                     OriginY = VerticalConnectionPos.Top,
                     OverlayX = HorizontalConnectionPos.Start,

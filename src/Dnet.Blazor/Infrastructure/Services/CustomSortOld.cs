@@ -15,10 +15,10 @@ public class CustomSortOld<TItem>
     }
 
     public static CustomSortOld<TItem> ByAscending<U>(Expression<Func<TItem, U>> expression)
-        => new CustomSortOld<TItem>((queryable) => queryable.OrderBy(expression));
+        => new((queryable) => queryable.OrderBy(expression));
 
     public static CustomSortOld<TItem> ByDescending<U>(Expression<Func<TItem, U>> expression)
-        => new CustomSortOld<TItem>((queryable) => queryable.OrderByDescending(expression));
+        => new((queryable) => queryable.OrderByDescending(expression));
 
     public CustomSortOld<TItem> ThenAscending<U>(Expression<Func<TItem, U>> expression)
     {

@@ -77,7 +77,7 @@ namespace Dnet.Blazor.Components.Overlay.Infrastructure.Models
 
         public FlexibleConnectedPositionStrategyBuilder FlexibleConnectedTo(FlexibleConnectedPositionStrategyOrigin origin)
         {
-            _origin = origin; ;
+            _origin = origin;
             return this;
         }
 

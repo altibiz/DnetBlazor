@@ -16,7 +16,7 @@ namespace Dnet.Blazor.Components.Grid.Infrastructure.Services
             get => _rowNodes;
             set
             {
-                _rowNodes = value; ;
+                _rowNodes = value;
             }
         }
 
@@ -25,7 +25,7 @@ namespace Dnet.Blazor.Components.Grid.Infrastructure.Services
             get => _renderedRowNodes;
             set
             {
-                _renderedRowNodes = value; ;
+                _renderedRowNodes = value;
             }
         }
 
@@ -34,7 +34,7 @@ namespace Dnet.Blazor.Components.Grid.Infrastructure.Services
             get => _treeRowNodes;
             set
             {
-                _treeRowNodes = value; ;
+                _treeRowNodes = value;
             }
         }
 

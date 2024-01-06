@@ -19,7 +19,7 @@
             {
                 if (!Selectable || _selected == value)
                     return;
-                _selected = value; ;
+                _selected = value;
             }
         }
     }

@@ -11,18 +11,11 @@ using Microsoft.AspNetCore.Components;
 
 namespace Dnet.Blazor.Components.Toast.Infrastructure.Services
 {
-    public class ToastService : IToastService
+    public class ToastService(IOverlayService overlayService) : IToastService
     {
-        private readonly IOverlayService _overlayService;
-
         private int _toastCounter = 0;
 
         private Dictionary<int, int> _positionTracker = [];
-
-        public ToastService(IOverlayService overlayService)
-        {
-            _overlayService = overlayService;
-        }
 
         public void Show(ToastConfig toastConfig, Type componentType, IDictionary<string, object> parameters, RenderFragment dialogContent)
         {
@@ -143,7 +136,7 @@ namespace Dnet.Blazor.Components.Toast.Infrastructure.Services
                 x.CloseComponent();
             });
 
-            var reference = _overlayService.Attach(toast, overlayConfig);
+            var reference = overlayService.Attach(toast, overlayConfig);
 
             _toastCounter++;
 
@@ -179,7 +172,7 @@ namespace Dnet.Blazor.Components.Toast.Infrastructure.Services
 
             if (_toastCounter < 0) { _toastCounter = 0; }
 
-            _overlayService.Detach(overlayDataResult);
+            overlayService.Detach(overlayDataResult);
         }
     }
 }

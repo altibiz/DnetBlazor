@@ -4,54 +4,46 @@ using Microsoft.JSInterop;
 
 namespace Dnet.Blazor.Components.Overlay.Infrastructure.Services
 {
-    public class DnetOverlayInterop
+    public class DnetOverlayInterop(IJSRuntime jsRuntime)
     {
-
-        private readonly IJSRuntime _jsRuntime;
-
-        public DnetOverlayInterop(IJSRuntime jsRuntime)
-        {
-            _jsRuntime = jsRuntime;
-        }
-
         public ValueTask<object> AddKeyDownEventListener(ElementReference element)
         {
-            return _jsRuntime.InvokeAsync<object>("dnetoverlay.addKeyDownEventListener", element);
+            return jsRuntime.InvokeAsync<object>("dnetoverlay.addKeyDownEventListener", element);
         }
 
         public ValueTask<ViewportScrollPosition> GetViewportScrollPosition()
         {
-            return _jsRuntime.InvokeAsync<ViewportScrollPosition>("dnetoverlay.getViewportScrollPosition");
+            return jsRuntime.InvokeAsync<ViewportScrollPosition>("dnetoverlay.getViewportScrollPosition");
         }
 
         public ValueTask<Models.Size> GetViewportSize()
         {
-            return _jsRuntime.InvokeAsync<Models.Size>("dnetoverlay.getViewportSize");
+            return jsRuntime.InvokeAsync<Models.Size>("dnetoverlay.getViewportSize");
         }
 
         public ValueTask<Models.Size> GetViewportSizeNoScroll()
         {
-            return _jsRuntime.InvokeAsync<Models.Size>("dnetoverlay.getViewportSizeNoScroll");
+            return jsRuntime.InvokeAsync<Models.Size>("dnetoverlay.getViewportSizeNoScroll");
         }
 
         public ValueTask<FlexibleConnectedPositionStrategyOrigin> GetBoundingClientRect(ElementReference element)
         {
-            return _jsRuntime.InvokeAsync<FlexibleConnectedPositionStrategyOrigin>("dnetoverlay.getBoundingClientRect", element);
+            return jsRuntime.InvokeAsync<FlexibleConnectedPositionStrategyOrigin>("dnetoverlay.getBoundingClientRect", element);
         }
 
         public ValueTask<FlexibleConnectedPositionStrategyOrigin> GetDocumentBoundingClientRect()
         {
-            return _jsRuntime.InvokeAsync<FlexibleConnectedPositionStrategyOrigin>("dnetoverlay.getDocumentBoundingClientRect");
+            return jsRuntime.InvokeAsync<FlexibleConnectedPositionStrategyOrigin>("dnetoverlay.getDocumentBoundingClientRect");
         }
 
         public ValueTask<int> GetDocumentClientHeight()
         {
-            return _jsRuntime.InvokeAsync<int>("dnetoverlay.getDocumentClientHeight");
+            return jsRuntime.InvokeAsync<int>("dnetoverlay.getDocumentClientHeight");
         }
 
         public ValueTask<int> GetDocumentClientWidth()
         {
-            return _jsRuntime.InvokeAsync<int>("dnetoverlay.getDocumentClientWidth");
+            return jsRuntime.InvokeAsync<int>("dnetoverlay.getDocumentClientWidth");
         }
     }
 }

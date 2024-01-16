@@ -8,15 +8,8 @@ using Microsoft.AspNetCore.Components;
 
 namespace Dnet.Blazor.Components.Tooltip.Infrastructure.Services
 {
-    public class TooltipService : ITooltipService
+    public class TooltipService(IOverlayService overlayService) : ITooltipService
     {
-        private readonly IOverlayService _overlayService;
-
-        public TooltipService(IOverlayService overlayService)
-        {
-            _overlayService = overlayService;
-        }
-
         public OverlayReference Show(TooltipConfig tooltipConfig, ElementReference elementReference)
         {
             return Open(null, tooltipConfig, elementReference);
@@ -131,14 +124,14 @@ namespace Dnet.Blazor.Components.Tooltip.Infrastructure.Services
                 x.CloseComponent();
             });
 
-            var overlayReference = _overlayService.Attach(tooltip, overlayConfig);
+            var overlayReference = overlayService.Attach(tooltip, overlayConfig);
 
             return overlayReference;
         }
 
         public void Close(OverlayResult overlayDataResult)
         {
-            _overlayService.Detach(overlayDataResult);
+            overlayService.Detach(overlayDataResult);
         }
     }
 }

@@ -10,15 +10,8 @@ using Microsoft.AspNetCore.Components;
 
 namespace Dnet.Blazor.Components.FloatingPanel.Infrastructure.Services
 {
-    public class FloatingPanelService : IFloatingPanelService
+    public class FloatingPanelService(IOverlayService overlayService) : IFloatingPanelService
     {
-        private readonly IOverlayService _overlayService;
-
-        public FloatingPanelService(IOverlayService overlayService)
-        {
-            _overlayService = overlayService;
-        }
-
         public OverlayReference Show(Type componentType, IDictionary<string, object> parameters, FloatingPanelConfig floatingPanelConfig)
         {
             var reference = Open(componentType, parameters, floatingPanelConfig);
@@ -119,14 +112,14 @@ namespace Dnet.Blazor.Components.FloatingPanel.Infrastructure.Services
                 x.CloseComponent();
             });
 
-            var overlayReference = _overlayService.Attach(toast, overlayConfig);
+            var overlayReference = overlayService.Attach(toast, overlayConfig);
 
             return overlayReference;
         }
 
         public void Close(OverlayResult overlayDataResult)
         {
-            _overlayService.Detach(overlayDataResult);
+            overlayService.Detach(overlayDataResult);
         }
     }
 }

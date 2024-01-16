@@ -7,9 +7,14 @@ using System.Collections.Generic;
 
 namespace Dnet.Blazor.Infrastructure.Services.CssBuilder
 {
-    public struct CssBuilder
+    /// <summary>
+    /// Creates a CssBuilder used to define conditional CSS classes used in a component.
+    /// Call Build() to return the completed CSS Classes as a string. 
+    /// </summary>
+    /// <param name="value"></param>
+    public struct CssBuilder(string value)
     {
-        private string stringBuffer;
+        private string stringBuffer = value;
 
         /// <summary>
         /// Creates a CssBuilder used to define conditional CSS classes used in a component.
@@ -23,13 +28,6 @@ namespace Dnet.Blazor.Infrastructure.Services.CssBuilder
         /// Call Build() to return the completed CSS Classes as a string. 
         /// </summary>
         public static CssBuilder Empty() => new();
-
-        /// <summary>
-        /// Creates a CssBuilder used to define conditional CSS classes used in a component.
-        /// Call Build() to return the completed CSS Classes as a string. 
-        /// </summary>
-        /// <param name="value"></param>
-        public CssBuilder(string value) => stringBuffer = value;
 
         /// <summary>
         /// Adds a raw string to the builder that will be concatenated with the next class or value added to the builder.

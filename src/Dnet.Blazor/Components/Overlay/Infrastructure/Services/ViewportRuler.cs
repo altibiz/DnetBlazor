@@ -4,10 +4,8 @@ using Microsoft.JSInterop;
 
 namespace Dnet.Blazor.Components.Overlay.Infrastructure.Services
 {
-    public class ViewportRuler : IViewportRuler, IDisposable
+    public class ViewportRuler(DnetOverlayInterop dnetOverlayInterop, IJSRuntime jsRuntime) : IViewportRuler, IDisposable
     {
-        private readonly DnetOverlayInterop _dnetOverlayInterop;
-        private readonly IJSRuntime _jsRuntime;
         private EventHandler<Models.Size> _onResized;
 
         private bool _disposed;
@@ -19,12 +17,6 @@ namespace Dnet.Blazor.Components.Overlay.Infrastructure.Services
         }
 
         private Models.Size _viewportSize;
-
-        public ViewportRuler(DnetOverlayInterop dnetOverlayInterop, IJSRuntime jsRuntime)
-        {
-            _dnetOverlayInterop = dnetOverlayInterop;
-            _jsRuntime = jsRuntime;
-        }
 
         public async Task<Models.Size> GetViewportSize()
         {
@@ -99,19 +91,19 @@ namespace Dnet.Blazor.Components.Overlay.Infrastructure.Services
             // `document.documentElement` works consistently, where the `top` and `left` values will
             // equal negative the scroll position.
 
-            var position = await _dnetOverlayInterop.GetViewportScrollPosition();
+            var position = await dnetOverlayInterop.GetViewportScrollPosition();
 
             return position;
         }
 
         private async Task<Models.Size> ViewportSizeNoScroll()
         {
-           return await _dnetOverlayInterop.GetViewportSizeNoScroll();
+           return await dnetOverlayInterop.GetViewportSizeNoScroll();
         }
 
         private async Task UpdateViewportSize()
         {
-            var viewportSize = await _dnetOverlayInterop.GetViewportSize();
+            var viewportSize = await dnetOverlayInterop.GetViewportSize();
 
             _viewportSize = viewportSize;
         }
@@ -141,10 +133,10 @@ namespace Dnet.Blazor.Components.Overlay.Infrastructure.Services
 
         public async ValueTask<bool> AddWindowEventListeners()
         {
-            return await _jsRuntime.InvokeAsync<bool>("dnetoverlay.addWindowEventListeners", DotNetObjectReference.Create(this));
+            return await jsRuntime.InvokeAsync<bool>("dnetoverlay.addWindowEventListeners", DotNetObjectReference.Create(this));
         } 
 
-        public async ValueTask RemoveWindowEventListeners() => await _jsRuntime.InvokeVoidAsync("dnetoverlay.removeWindowEventListeners");
+        public async ValueTask RemoveWindowEventListeners() => await jsRuntime.InvokeVoidAsync("dnetoverlay.removeWindowEventListeners");
 
         protected virtual void Dispose(bool disposing)
         {

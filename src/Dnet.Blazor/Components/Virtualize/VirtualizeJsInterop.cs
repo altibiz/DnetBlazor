@@ -9,40 +9,29 @@ using Microsoft.JSInterop;
 
 namespace Dnet.Blazor.Components.Virtualize
 {
-    internal class VirtualizeJsInterop : IAsyncDisposable
+    [method: DynamicDependency(nameof(OnSpacerBeforeVisible))]
+    [method: DynamicDependency(nameof(OnSpacerAfterVisible))]
+    internal class VirtualizeJsInterop(IVirtualizeJsCallbacks owner, IJSRuntime jsRuntime) : IAsyncDisposable
     {
         private const string JsFunctionsPrefix = "Blazor._internal.Virtualize";
-
-        private readonly IVirtualizeJsCallbacks _owner;
-
-        private readonly IJSRuntime _jsRuntime;
-
         private DotNetObjectReference<VirtualizeJsInterop>? _selfReference;
-
-        [DynamicDependency(nameof(OnSpacerBeforeVisible))]
-        [DynamicDependency(nameof(OnSpacerAfterVisible))]
-        public VirtualizeJsInterop(IVirtualizeJsCallbacks owner, IJSRuntime jsRuntime)
-        {
-            _owner = owner;
-            _jsRuntime = jsRuntime;
-        }
 
         public async ValueTask InitializeAsync(ElementReference spacerBefore, ElementReference spacerAfter)
         {
             _selfReference = DotNetObjectReference.Create(this);
-            await _jsRuntime.InvokeVoidAsync($"{JsFunctionsPrefix}.init", _selfReference, spacerBefore, spacerAfter);
+            await jsRuntime.InvokeVoidAsync($"{JsFunctionsPrefix}.init", _selfReference, spacerBefore, spacerAfter);
         }
 
         [JSInvokable]
         public void OnSpacerBeforeVisible(float spacerSize, float spacerSeparation, float containerSize)
         {
-            _owner.OnBeforeSpacerVisible(spacerSize, spacerSeparation, containerSize);
+            owner.OnBeforeSpacerVisible(spacerSize, spacerSeparation, containerSize);
         }
 
         [JSInvokable]
         public void OnSpacerAfterVisible(float spacerSize, float spacerSeparation, float containerSize)
         {
-            _owner.OnAfterSpacerVisible(spacerSize, spacerSeparation, containerSize);
+            owner.OnAfterSpacerVisible(spacerSize, spacerSeparation, containerSize);
         }
 
         public async ValueTask DisposeAsync()
@@ -51,7 +40,7 @@ namespace Dnet.Blazor.Components.Virtualize
             {
                 try
                 {
-                    await _jsRuntime.InvokeVoidAsync($"{JsFunctionsPrefix}.dispose", _selfReference);
+                    await jsRuntime.InvokeVoidAsync($"{JsFunctionsPrefix}.dispose", _selfReference);
                 }
                 catch (JSDisconnectedException)
                 {

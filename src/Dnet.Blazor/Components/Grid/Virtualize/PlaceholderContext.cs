@@ -6,12 +6,17 @@ namespace Dnet.Blazor.Components.Grid.Virtualize
     /// <summary>
     /// Contains context for a placeholder in a virtualized list.
     /// </summary>
-    public readonly struct PlaceholderContext
+    /// <remarks>
+    /// Constructs a new <see cref="PlaceholderContext"/> instance.
+    /// </remarks>
+    /// <param name="index">The item index of the placeholder.</param>
+    /// <param name="size">The size of the placeholder in pixels.</param>
+    public readonly struct PlaceholderContext(int index, float size = 0f)
     {
         /// <summary>
         /// The item index of the placeholder.
         /// </summary>
-        public int Index { get; }
+        public int Index { get; } = index;
 
         /// <summary>
         /// The size of the placeholder in pixels.
@@ -20,17 +25,6 @@ namespace Dnet.Blazor.Components.Grid.Virtualize
         /// For virtualized components with horizontal scrolling, this would be the width of the placeholder in pixels.
         /// </para>
         /// </summary>
-        public float Size { get; }
-
-        /// <summary>
-        /// Constructs a new <see cref="PlaceholderContext"/> instance.
-        /// </summary>
-        /// <param name="index">The item index of the placeholder.</param>
-        /// <param name="size">The size of the placeholder in pixels.</param>
-        public PlaceholderContext(int index, float size = 0f)
-        {
-            Index = index;
-            Size = size;
-        }
+        public float Size { get; } = size;
     }
 }

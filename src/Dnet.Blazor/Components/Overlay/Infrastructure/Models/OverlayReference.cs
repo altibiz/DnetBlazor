@@ -3,16 +3,11 @@ using Dnet.Blazor.Components.Overlay.Infrastructure.Services;
 
 namespace Dnet.Blazor.Components.Overlay.Infrastructure.Models
 {
-    public class OverlayReference
+    public class OverlayReference(int overlayReferenceId)
     {
         public event Action<OverlayResult> Close;
 
-        internal int OverlayReferenceId { get; set; }
-
-        public OverlayReference(int overlayReferenceId)
-        {
-            OverlayReferenceId = overlayReferenceId;
-        }
+        internal int OverlayReferenceId { get; set; } = overlayReferenceId;
 
         internal void CloseOverlayReference(OverlayResult overlayDataResult)
         {

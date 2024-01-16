@@ -7,15 +7,8 @@ using Microsoft.AspNetCore.Components;
 
 namespace Dnet.Blazor.Components.Dialog.Infrastructure.Services
 {
-    public class DialogService : IDialogService
+    public class DialogService(IOverlayService overlayService) : IDialogService
     {
-        private readonly IOverlayService _overlayService;
-
-        public DialogService(IOverlayService overlayService)
-        {
-            _overlayService = overlayService;
-        }
-
         public OverlayReference Open(Type componentType, IDictionary<string, object> parameters, DialogConfig dialogConfig)
         {
             if (!typeof(ComponentBase).IsAssignableFrom(componentType))
@@ -49,14 +42,14 @@ namespace Dnet.Blazor.Components.Dialog.Infrastructure.Services
                 x.CloseComponent();
             });
 
-            var overlayReference = _overlayService.Attach(dialog, overlayConfig);
+            var overlayReference = overlayService.Attach(dialog, overlayConfig);
 
             return overlayReference;
         }
 
         public void Close(OverlayResult overlayDataResult)
         {
-            _overlayService.Detach(overlayDataResult);
+            overlayService.Detach(overlayDataResult);
         }
     }
 }

@@ -8,19 +8,11 @@ using Microsoft.AspNetCore.Components;
 
 namespace Dnet.Blazor.Components.ConnectedPanel.Infrastructure.Services
 {
-    public class ConnectedPanelService : IConnectedPanelService, IDisposable
+    public class ConnectedPanelService(IOverlayService overlayService) : IConnectedPanelService, IDisposable
     {
-        private readonly IOverlayService _overlayService;
-
         private bool _isOpen = false;
 
         private OverlayReference _menuReference;
-
-
-        public ConnectedPanelService(IOverlayService overlayService)
-        {
-            _overlayService = overlayService;
-        }
 
         public OverlayReference ToggleMenu(Type componentType, IDictionary<string, object> parameters, ElementReference menuTrigger, ConnectedPanelConfig connectedPanelConfig = null)
         {
@@ -113,7 +105,7 @@ namespace Dnet.Blazor.Components.ConnectedPanel.Infrastructure.Services
                 x.CloseComponent();
             });
 
-            _menuReference = _overlayService.Attach(connectedPanel, overlayConfig);
+            _menuReference = overlayService.Attach(connectedPanel, overlayConfig);
 
             _menuReference.Close += CloseDialog;
 
@@ -130,14 +122,14 @@ namespace Dnet.Blazor.Components.ConnectedPanel.Infrastructure.Services
                 CloseReason = CloseReason.Cancel
             };
 
-            _overlayService.Detach(result);
+            overlayService.Detach(result);
         }
 
         public void Close(OverlayResult overlayDataResult)
         {
             _isOpen = false;
 
-            _overlayService.Detach(overlayDataResult);
+            overlayService.Detach(overlayDataResult);
         }
 
         void CloseDialog(OverlayResult overlayDataResult)

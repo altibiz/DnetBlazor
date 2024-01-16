@@ -8,38 +8,27 @@ using Microsoft.JSInterop;
 
 namespace Dnet.Blazor.Components.Grid.Virtualize
 {
-    internal class VirtualizeJsInterop : IAsyncDisposable
+    internal class VirtualizeJsInterop(IVirtualizeJsCallbacks owner, IJSRuntime jsRuntime) : IAsyncDisposable
     {
         private const string JsFunctionsPrefix = "blginterop";
-
-        private readonly IVirtualizeJsCallbacks _owner;
-
-        private readonly IJSRuntime _jsRuntime;
-
         private DotNetObjectReference<VirtualizeJsInterop>? _selfReference;
-
-        public VirtualizeJsInterop(IVirtualizeJsCallbacks owner, IJSRuntime jsRuntime)
-        {
-            _owner = owner;
-            _jsRuntime = jsRuntime;
-        }
 
         public async ValueTask InitializeAsync(ElementReference spacerBefore, ElementReference spacerAfter, int rootMargin = 50)
         {
             _selfReference = DotNetObjectReference.Create(this);
-            await _jsRuntime.InvokeVoidAsync($"{JsFunctionsPrefix}.init", _selfReference, spacerBefore, spacerAfter, rootMargin);
+            await jsRuntime.InvokeVoidAsync($"{JsFunctionsPrefix}.init", _selfReference, spacerBefore, spacerAfter, rootMargin);
         }
 
         [JSInvokable]
         public void OnSpacerBeforeVisible(float spacerSize, float spacerSeparation, float containerSize)
         {
-            _owner.OnBeforeSpacerVisible(spacerSize, spacerSeparation, containerSize);
+            owner.OnBeforeSpacerVisible(spacerSize, spacerSeparation, containerSize);
         }
 
         [JSInvokable]
         public void OnSpacerAfterVisible(float spacerSize, float spacerSeparation, float containerSize)
         {
-            _owner.OnAfterSpacerVisible(spacerSize, spacerSeparation, containerSize);
+            owner.OnAfterSpacerVisible(spacerSize, spacerSeparation, containerSize);
         }
 
         public async ValueTask DisposeAsync()
@@ -48,7 +37,7 @@ namespace Dnet.Blazor.Components.Grid.Virtualize
             {
                 try
                 {
-                    await _jsRuntime.InvokeVoidAsync($"{JsFunctionsPrefix}.dispose", _selfReference);
+                    await jsRuntime.InvokeVoidAsync($"{JsFunctionsPrefix}.dispose", _selfReference);
                 }
                 catch (JSDisconnectedException)
                 {

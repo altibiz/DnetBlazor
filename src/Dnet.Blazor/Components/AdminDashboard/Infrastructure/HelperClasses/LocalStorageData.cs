@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Dnet.Blazor.Components.AdminDashboard.Infrastructure.HelperClasses
+﻿namespace Dnet.Blazor.Components.AdminDashboard.Infrastructure.HelperClasses
 {
     public class LocalStorageData
     {

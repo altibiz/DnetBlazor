@@ -2,8 +2,6 @@
 // License: MIT
 // See https://github.com/EdCharbeneau
 
-using System;
-
 namespace Dnet.Blazor.Infrastructure.Services.CssBuilder
 {
     public class ValueBuilder

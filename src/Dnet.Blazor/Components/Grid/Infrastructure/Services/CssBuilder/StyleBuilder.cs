@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Dnet.Blazor.Components.Grid.Infrastructure.Services.CssBuilder
+﻿namespace Dnet.Blazor.Components.Grid.Infrastructure.Services.CssBuilder
 {
 
     public struct StyleBuilder

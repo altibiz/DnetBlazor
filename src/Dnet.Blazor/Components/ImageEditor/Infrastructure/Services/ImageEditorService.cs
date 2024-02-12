@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Dnet.Blazor.Components.ImageEditor.Infrastructure.Constants;
+﻿using Dnet.Blazor.Components.ImageEditor.Infrastructure.Constants;
 using Dnet.Blazor.Components.ImageEditor.Infrastructure.Models;
 
 namespace Dnet.Blazor.Components.ImageEditor.Infrastructure.Services

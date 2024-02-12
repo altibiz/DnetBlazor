@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Dnet.Blazor.Components.Dialog.Infrastructure.Models;
+﻿using Dnet.Blazor.Components.Dialog.Infrastructure.Models;
 using Dnet.Blazor.Components.Overlay.Infrastructure.Models;
 using Dnet.Blazor.Components.Overlay.Infrastructure.Services;
 

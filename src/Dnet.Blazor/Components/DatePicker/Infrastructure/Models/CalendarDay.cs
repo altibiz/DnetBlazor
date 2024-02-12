@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Dnet.Blazor.Components.DatePicker.Infrastructure.Models
+﻿namespace Dnet.Blazor.Components.DatePicker.Infrastructure.Models
 {
     public class CalendarDay
     {

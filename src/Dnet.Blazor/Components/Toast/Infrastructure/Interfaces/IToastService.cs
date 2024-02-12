@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Dnet.Blazor.Components.Overlay.Infrastructure.Services;
+﻿using Dnet.Blazor.Components.Overlay.Infrastructure.Services;
 using Dnet.Blazor.Components.Toast.Infrastructure.Models;
 using Microsoft.AspNetCore.Components;
 

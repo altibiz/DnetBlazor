@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using Dnet.Blazor.Components.Overlay.Infrastructure.Models;
+﻿using Dnet.Blazor.Components.Overlay.Infrastructure.Models;
 
 namespace Dnet.Blazor.Components.Overlay.Infrastructure.Interfaces
 {

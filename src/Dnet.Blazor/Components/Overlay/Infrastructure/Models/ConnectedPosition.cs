@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Dnet.Blazor.Components.Overlay.Infrastructure.Enums;
+﻿using Dnet.Blazor.Components.Overlay.Infrastructure.Enums;
 
 namespace Dnet.Blazor.Components.Overlay.Infrastructure.Models
 {

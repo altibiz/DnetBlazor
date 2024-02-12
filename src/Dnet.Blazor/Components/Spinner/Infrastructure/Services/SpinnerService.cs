@@ -1,5 +1,4 @@
-﻿using System;
-using Dnet.Blazor.Components.Spinner.Infrastructure.Interfaces;
+﻿using Dnet.Blazor.Components.Spinner.Infrastructure.Interfaces;
 
 namespace Dnet.Blazor.Components.Spinner.Infrastructure.Services
 {

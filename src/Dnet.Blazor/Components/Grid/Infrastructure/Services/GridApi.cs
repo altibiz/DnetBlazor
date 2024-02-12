@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Dnet.Blazor.Components.Grid.Infrastructure.Entities;
+﻿using Dnet.Blazor.Components.Grid.Infrastructure.Entities;
 
 namespace Dnet.Blazor.Components.Grid.Infrastructure.Services
 {

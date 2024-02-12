@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Dnet.Blazor.Components.FloatingPanel.Infrastructure.Enums;
+﻿using Dnet.Blazor.Components.FloatingPanel.Infrastructure.Enums;
 using Dnet.Blazor.Components.FloatingPanel.Infrastructure.Interfaces;
 using Dnet.Blazor.Components.FloatingPanel.Infrastructure.Models;
 using Dnet.Blazor.Components.Overlay.Infrastructure.Interfaces;

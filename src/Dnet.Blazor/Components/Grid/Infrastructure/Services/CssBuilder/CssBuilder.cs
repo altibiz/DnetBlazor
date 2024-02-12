@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Dnet.Blazor.Components.Grid.Infrastructure.Services.CssBuilder
+﻿namespace Dnet.Blazor.Components.Grid.Infrastructure.Services.CssBuilder
 {
     /// <summary>
     /// Creates a CssBuilder used to define conditional CSS classes used in a component.

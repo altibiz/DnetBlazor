@@ -1,5 +1,4 @@
-﻿using System;
-using Dnet.Blazor.Components.ConnectedPanel.Infrastructure.Models;
+﻿using Dnet.Blazor.Components.ConnectedPanel.Infrastructure.Models;
 using Dnet.Blazor.Components.Overlay.Infrastructure.Models;
 using Dnet.Blazor.Components.Overlay.Infrastructure.Services;
 using Microsoft.AspNetCore.Components;

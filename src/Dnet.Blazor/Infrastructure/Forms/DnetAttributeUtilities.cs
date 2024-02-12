@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
+﻿using System.Globalization;
 
 namespace Dnet.Blazor.Infrastructure.Forms
 {
-	public class DnetAttributeUtilities
+    public class DnetAttributeUtilities
 	{
         public static string CombineClassNames(IReadOnlyDictionary<string, object>? additionalAttributes, string classNames)
         {

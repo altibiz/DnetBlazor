@@ -1,5 +1,4 @@
-﻿using System;
-using Dnet.Blazor.Components.AdminDashboard.Infrastructure.Models;
+﻿using Dnet.Blazor.Components.AdminDashboard.Infrastructure.Models;
 
 namespace Dnet.Blazor.Components.AdminDashboard.Infrastructure.Interfaces
 {

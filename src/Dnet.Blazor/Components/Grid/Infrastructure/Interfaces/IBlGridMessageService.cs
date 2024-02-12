@@ -1,5 +1,4 @@
-﻿using System;
-using Dnet.Blazor.Components.Grid.Infrastructure.Models;
+﻿using Dnet.Blazor.Components.Grid.Infrastructure.Models;
 
 namespace Dnet.Blazor.Components.Grid.Infrastructure.Interfaces
 {

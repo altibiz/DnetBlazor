@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Dnet.Blazor.Components.Grid.Infrastructure.Services.CssBuilder
+﻿namespace Dnet.Blazor.Components.Grid.Infrastructure.Services.CssBuilder
 {
     public class ValueBuilder
     {

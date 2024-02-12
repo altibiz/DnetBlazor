@@ -2,9 +2,6 @@
 // License: MIT
 // See https://github.com/EdCharbeneau
 
-using System;
-using System.Collections.Generic;
-
 namespace Dnet.Blazor.Infrastructure.Services.CssBuilder
 {
     /// <summary>

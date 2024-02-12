@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Dnet.Blazor.Components.DatePicker.Infrastructure.Models;
+﻿using Dnet.Blazor.Components.DatePicker.Infrastructure.Models;
 
 namespace Dnet.Blazor.Components.DatePicker.Infrastructure.Interfaces
 {

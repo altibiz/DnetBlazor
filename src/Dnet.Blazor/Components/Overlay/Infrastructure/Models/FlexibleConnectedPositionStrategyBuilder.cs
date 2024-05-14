@@ -208,7 +208,7 @@ namespace Dnet.Blazor.Components.Overlay.Infrastructure.Models
         {
             var preferredPositions = this._preferredPositions;
 
-            if (!preferredPositions.Any())
+            if (preferredPositions.Count == 0)
             {
                 throw new Exception("FlexibleConnectedPositionStrategy At least one position is required");
             }

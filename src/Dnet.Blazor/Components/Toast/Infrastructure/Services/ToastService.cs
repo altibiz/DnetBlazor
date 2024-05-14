@@ -154,7 +154,7 @@ namespace Dnet.Blazor.Components.Toast.Infrastructure.Services
                 key = c;
             }
 
-            _positionTracker.Add(!_positionTracker.Any() ? 0 : key, reference.GetOverlayReferenceId());
+            _positionTracker.Add(_positionTracker.Count == 0 ? 0 : key, reference.GetOverlayReferenceId());
         }
 
         public void Close(OverlayResult overlayDataResult)

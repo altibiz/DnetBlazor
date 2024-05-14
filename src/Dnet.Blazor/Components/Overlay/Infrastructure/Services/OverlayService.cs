@@ -44,7 +44,7 @@ namespace Dnet.Blazor.Components.Overlay.Infrastructure.Services
 
             _overlayReferences.Remove(item);
 
-            if (!_overlayReferences.Any()) _sequenceNumber = 0;
+            if (_overlayReferences.Count == 0) _sequenceNumber = 0;
 
             OnDetach?.Invoke(overlayDataResult);
 

@@ -35,7 +35,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Components" Version="8.0.10" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.10" />
-		<PackageReference Include="SixLabors.ImageSharp" Version="3.1.5" />
+		<PackageReference Include="SixLabors.ImageSharp" Version="3.1.6" />
 	</ItemGroup>
 
 	<ItemGroup>
